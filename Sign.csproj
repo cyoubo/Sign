@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A281806C-2952-40BA-B8D1-64397F75B02F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sign</RootNamespace>
+    <AssemblyName>Sign</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Words, Version=17.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v15.2.UI, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.2.Wizard, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Moon.Orm, Version=6.2.5819.29278, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Moon.Orm.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.89.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Module_Sign\Componet\Adapter\TB_SpecialDailyAdapter.cs" />
+    <Compile Include="Module_Sign\Componet\Adapter\TB_BookCatalogAdapter.cs" />
+    <Compile Include="Module_Sign\Componet\Adapter\TB_BookReadSignAdapter.cs" />
+    <Compile Include="Module_Sign\Componet\Adapter\TB_BudgetAdapter.cs" />
+    <Compile Include="Module_Sign\Componet\Adapter\TB_BudgetCatalogAdapter.cs" />
+    <Compile Include="Module_Sign\Componet\Adapter\TB_CourseAdapter.cs" />
+    <Compile Include="Module_Sign\Componet\Adapter\TB_CourseCatalogAdapter.cs" />
+    <Compile Include="Module_Sign\Componet\Adapter\TB_CourseSignAdapter.cs" />
+    <Compile Include="Module_Sign\Componet\Adapter\TB_DailyPlanCatalogAdapter.cs" />
+    <Compile Include="Module_Sign\Componet\Adapter\TB_DailyPlanSignAdapter.cs" />
+    <Compile Include="Module_Sign\Componet\Adapter\TB_GYMAPPARATUSAdapter.cs" />
+    <Compile Include="Module_Sign\Componet\Adapter\TB_GYMBaseAdapter.cs" />
+    <Compile Include="Module_Sign\Componet\Adapter\TB_GYMCatalogAdapter.cs" />
+    <Compile Include="Module_Sign\Componet\Adapter\TB_ReadPlanAdapter.cs" />
+    <Compile Include="Module_Sign\Componet\BudgetStatistician.cs" />
+    <Compile Include="Module_Sign\Componet\Command\DailySignFinishStateHighlightCommand.cs" />
+    <Compile Include="Module_Sign\Componet\Command\DailySignTypeHighlightCommand.cs" />
+    <Compile Include="Module_Sign\Componet\DailyPlanSignStatistician.cs" />
+    <Compile Include="Module_Sign\Componet\GYMAPPARATUSStatistician.cs" />
+    <Compile Include="Module_Sign\Componet\DailyScanTableConstructor.cs" />
+    <Compile Include="Module_Sign\Componet\ReadPlanCompareStatistician.cs" />
+    <Compile Include="Module_Sign\Controller\BudgetCatalogManageController.cs" />
+    <Compile Include="Module_Sign\Controller\BudgetManageController.cs" />
+    <Compile Include="Module_Sign\Controller\ReadCatalogManageController.cs" />
+    <Compile Include="Module_Sign\Controller\CourseCatalogManageController.cs" />
+    <Compile Include="Module_Sign\Controller\CourseManageController.cs" />
+    <Compile Include="Module_Sign\Controller\CourseSignManageController.cs" />
+    <Compile Include="Module_Sign\Controller\DailyPlanCatalogManageController.cs" />
+    <Compile Include="Module_Sign\Controller\DailyPlanSignManageController.cs" />
+    <Compile Include="Module_Sign\Controller\GYMAPPARATUSManageController.cs" />
+    <Compile Include="Module_Sign\Controller\GYMBaseManageController.cs" />
+    <Compile Include="Module_Sign\Controller\GYMCatalogManageController.cs" />
+    <Compile Include="Module_Sign\Controller\ReadPlanManageController.cs" />
+    <Compile Include="Module_Sign\Controller\ReadSignManageController.cs" />
+    <Compile Include="Module_Sign\Controller\SpecialDailyManageController.cs" />
+    <Compile Include="Module_Sign\Model\Const\EnumBookPlanState.cs" />
+    <Compile Include="Module_Sign\Model\Const\EnumBudgetState.cs" />
+    <Compile Include="Module_Sign\Model\Const\EnumCourseState.cs" />
+    <Compile Include="Module_Sign\Model\Const\EnumDailyPlanState.cs" />
+    <Compile Include="Module_Sign\Model\Const\EnumSpecialDailyType.cs" />
+    <Compile Include="Module_Sign\Model\TB_BudgetCatalog.cs" />
+    <Compile Include="Module_Sign\Model\TB_Budget.cs" />
+    <Compile Include="Module_Sign\Model\TB_SpecialDaily.cs" />
+    <Compile Include="Module_Sign\Model\TB_Course.cs" />
+    <Compile Include="Module_Sign\Model\TB_CourseCatalog.cs" />
+    <Compile Include="Module_Sign\Model\TB_CourseSign.cs" />
+    <Compile Include="Module_Sign\Model\TB_DailyPlanSign.cs" />
+    <Compile Include="Module_Sign\Model\TB_DailyPlanCatalog.cs" />
+    <Compile Include="Module_Sign\Model\TB_GYMAPPARATUS.cs" />
+    <Compile Include="Module_Sign\Model\TB_GYMBase.cs" />
+    <Compile Include="Module_Sign\Model\TB_GYMCatalog.cs" />
+    <Compile Include="Module_Sign\Model\TB_BookReadSign.cs" />
+    <Compile Include="Module_Sign\Model\TB_BookCatalog.cs" />
+    <Compile Include="Module_Sign\Model\TB_BookReadPlan.cs" />
+    <Compile Include="Module_Sign\View\Form\FrmBudgetCatalogEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\Form\FrmBudgetCatalogEdit.Designer.cs">
+      <DependentUpon>FrmBudgetCatalogEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\Form\FrmCourseCatalogEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\Form\FrmCourseCatalogEdit.Designer.cs">
+      <DependentUpon>FrmCourseCatalogEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\Form\FrmDailyPlanCatalogEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\Form\FrmDailyPlanCatalogEdit.Designer.cs">
+      <DependentUpon>FrmDailyPlanCatalogEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\Form\FrmGYMCatalogEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\Form\FrmGYMCatalogEdit.Designer.cs">
+      <DependentUpon>FrmGYMCatalogEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_DailyPlanSignCompare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_DailyPlanSignCompare.Designer.cs">
+      <DependentUpon>UC_DailyPlanSignCompare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_DailyPlanSignEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_DailyPlanSignEdit.Designer.cs">
+      <DependentUpon>UC_DailyPlanSignEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_DailyPlanSignStatistician.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_DailyPlanSignStatistician.designer.cs">
+      <DependentUpon>UC_DailyPlanSignStatistician.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_ReadPlanCompare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_ReadPlanCompare.Designer.cs">
+      <DependentUpon>UC_ReadPlanCompare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_ReadSignCalender.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_ReadSignCalender.Designer.cs">
+      <DependentUpon>UC_ReadSignCalender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_ReadSignScan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_ReadSignScan.Designer.cs">
+      <DependentUpon>UC_ReadSignScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_SpecialDailyEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_SpecialDailyEdit.Designer.cs">
+      <DependentUpon>UC_SpecialDailyEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_BudgetSign.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_BudgetSign.Designer.cs">
+      <DependentUpon>UC_BudgetSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_BudgetWeed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_BudgetWeed.Designer.cs">
+      <DependentUpon>UC_BudgetWeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_CourseEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_CourseEdit.Designer.cs">
+      <DependentUpon>UC_CourseEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_CourseScan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_CourseScan.Designer.cs">
+      <DependentUpon>UC_CourseScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_CourseSignEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_CourseSignEdit.Designer.cs">
+      <DependentUpon>UC_CourseSignEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_DailyPlanSignScan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_DailyPlanSignScan.Designer.cs">
+      <DependentUpon>UC_DailyPlanSignScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_DailyPlanSignUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_DailyPlanSignUpdate.Designer.cs">
+      <DependentUpon>UC_DailyPlanSignUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_GYMCompare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_GYMCompare.Designer.cs">
+      <DependentUpon>UC_GYMCompare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_GYMCompareItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_GYMCompareItem.Designer.cs">
+      <DependentUpon>UC_GYMCompareItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_GYMSignEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_GYMSignEdit.Designer.cs">
+      <DependentUpon>UC_GYMSignEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_GYMSignScan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_GYMSignScan.Designer.cs">
+      <DependentUpon>UC_GYMSignScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_ReadSignEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_ReadSignEdit.Designer.cs">
+      <DependentUpon>UC_ReadSignEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_SpecialDailyCalender.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_SpecialDailyCalender.Designer.cs">
+      <DependentUpon>UC_SpecialDailyCalender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_System\Model\GParam.cs" />
+    <Compile Include="Module_System\Model\UIMediator.cs" />
+    <Compile Include="Module_Sign\View\Form\FrmBookCatalogEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\Form\FrmBookCatalogEdit.Designer.cs">
+      <DependentUpon>FrmBookCatalogEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_ReadPlanEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_ReadPlanEdit.Designer.cs">
+      <DependentUpon>UC_ReadPlanEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_System\View\Form\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_System\View\Form\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_System\View\Form\Frm_DataBaseConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_System\View\Form\Frm_DataBaseConnect.designer.cs">
+      <DependentUpon>Frm_DataBaseConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Module_Sign\View\Form\FrmBookCatalogEdit.resx">
+      <DependentUpon>FrmBookCatalogEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\Form\FrmBudgetCatalogEdit.resx">
+      <DependentUpon>FrmBudgetCatalogEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\Form\FrmCourseCatalogEdit.resx">
+      <DependentUpon>FrmCourseCatalogEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\Form\FrmDailyPlanCatalogEdit.resx">
+      <DependentUpon>FrmDailyPlanCatalogEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\Form\FrmGYMCatalogEdit.resx">
+      <DependentUpon>FrmGYMCatalogEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_DailyPlanSignCompare.resx">
+      <DependentUpon>UC_DailyPlanSignCompare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_DailyPlanSignEdit.resx">
+      <DependentUpon>UC_DailyPlanSignEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_DailyPlanSignStatistician.resx">
+      <DependentUpon>UC_DailyPlanSignStatistician.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_ReadPlanCompare.resx">
+      <DependentUpon>UC_ReadPlanCompare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_ReadSignCalender.resx">
+      <DependentUpon>UC_ReadSignCalender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_ReadSignScan.resx">
+      <DependentUpon>UC_ReadSignScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_SpecialDailyCalender.resx">
+      <DependentUpon>UC_SpecialDailyCalender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_SpecialDailyEdit.resx">
+      <DependentUpon>UC_SpecialDailyEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_BudgetSign.resx">
+      <DependentUpon>UC_BudgetSign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_BudgetWeed.resx">
+      <DependentUpon>UC_BudgetWeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_CourseEdit.resx">
+      <DependentUpon>UC_CourseEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_CourseScan.resx">
+      <DependentUpon>UC_CourseScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_CourseSignEdit.resx">
+      <DependentUpon>UC_CourseSignEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_DailyPlanSignScan.resx">
+      <DependentUpon>UC_DailyPlanSignScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_DailyPlanSignUpdate.resx">
+      <DependentUpon>UC_DailyPlanSignUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_GYMCompare.resx">
+      <DependentUpon>UC_GYMCompare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_GYMCompareItem.resx">
+      <DependentUpon>UC_GYMCompareItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_GYMSignEdit.resx">
+      <DependentUpon>UC_GYMSignEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_GYMSignScan.resx">
+      <DependentUpon>UC_GYMSignScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_ReadPlanEdit.resx">
+      <DependentUpon>UC_ReadPlanEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_ReadSignEdit.resx">
+      <DependentUpon>UC_ReadSignEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_System\View\Form\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_System\View\Form\Frm_DataBaseConnect.resx">
+      <DependentUpon>Frm_DataBaseConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PS.Plot.FrameBasic\PS.Plot.FrameBasic.csproj">
+      <Project>{db82e8dc-bd52-4d04-8db9-dfe9689931fe}</Project>
+      <Name>PS.Plot.FrameBasic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Module_System\Componet\Adapter\" />
+    <Folder Include="Module_System\Controller\" />
+    <Folder Include="Module_System\View\UControl\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

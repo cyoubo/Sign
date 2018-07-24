@@ -33,7 +33,11 @@
 *.pdb
 
 # Debug Path
-\bin\obj
+\obj
+Sign.exe.config
+Sign.vshost.exe.config
+Sign.vshost.exe.manifest
+!\Debug\*.dll
 
 # Log File
 *.log

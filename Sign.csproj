@@ -102,6 +102,7 @@
     <Compile Include="Module_Sign\Componet\GYMAPPARATUSStatistician.cs" />
     <Compile Include="Module_Sign\Componet\DailyScanTableConstructor.cs" />
     <Compile Include="Module_Sign\Componet\ReadPlanCompareStatistician.cs" />
+    <Compile Include="Module_Sign\Componet\SalaryPlanCalculator.cs" />
     <Compile Include="Module_Sign\Controller\BudgetCatalogManageController.cs" />
     <Compile Include="Module_Sign\Controller\BudgetManageController.cs" />
     <Compile Include="Module_Sign\Controller\ReadCatalogManageController.cs" />
@@ -194,6 +195,12 @@
     </Compile>
     <Compile Include="Module_Sign\View\UControl\UC_ReadSignScan.Designer.cs">
       <DependentUpon>UC_ReadSignScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_SalaryPlan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_SalaryPlan.designer.cs">
+      <DependentUpon>UC_SalaryPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="Module_Sign\View\UControl\UC_SpecialDailyEdit.cs">
       <SubType>UserControl</SubType>
@@ -339,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Module_Sign\View\UControl\UC_ReadSignScan.resx">
       <DependentUpon>UC_ReadSignScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_SalaryPlan.resx">
+      <DependentUpon>UC_SalaryPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Module_Sign\View\UControl\UC_SpecialDailyCalender.resx">
       <DependentUpon>UC_SpecialDailyCalender.cs</DependentUpon>

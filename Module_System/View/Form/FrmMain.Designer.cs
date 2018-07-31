@@ -72,6 +72,8 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ContentTabs = new DevExpress.XtraTab.XtraTabControl();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barBtn_SalaryPlan = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContentTabs)).BeginInit();
             this.SuspendLayout();
@@ -108,10 +110,11 @@
             this.barButtonItem4,
             this.barBtn_SpecialDailyScheduler,
             this.barBtn_DailyPlanSignCompare,
-            this.barBtn_DailyPlanStatistican});
+            this.barBtn_DailyPlanStatistican,
+            this.barBtn_SalaryPlan});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.ribbonControl1.MaxItemId = 32;
+            this.ribbonControl1.MaxItemId = 33;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -423,7 +426,8 @@
             // ribbonPage4
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup8});
+            this.ribbonPageGroup8,
+            this.ribbonPageGroup9});
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "预算种草";
             // 
@@ -484,6 +488,21 @@
             this.ContentTabs.Name = "ContentTabs";
             this.ContentTabs.Size = new System.Drawing.Size(895, 376);
             this.ContentTabs.TabIndex = 1;
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.barBtn_SalaryPlan);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "工资处理";
+            // 
+            // barBtn_SalaryPlan
+            // 
+            this.barBtn_SalaryPlan.Caption = "工资分配";
+            this.barBtn_SalaryPlan.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtn_SalaryPlan.Glyph")));
+            this.barBtn_SalaryPlan.Id = 32;
+            this.barBtn_SalaryPlan.Name = "barBtn_SalaryPlan";
+            this.barBtn_SalaryPlan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtn_SalaryPlan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_SalaryPlan_ItemClick);
             // 
             // FrmMain
             // 
@@ -549,5 +568,7 @@
         private DevExpress.XtraBars.BarButtonItem barBtn_SpecialDailyScheduler;
         private DevExpress.XtraBars.BarButtonItem barBtn_DailyPlanSignCompare;
         private DevExpress.XtraBars.BarButtonItem barBtn_DailyPlanStatistican;
+        private DevExpress.XtraBars.BarButtonItem barBtn_SalaryPlan;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
     }
 }

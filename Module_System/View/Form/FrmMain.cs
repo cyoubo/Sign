@@ -231,5 +231,12 @@ namespace Sign.Module_System.View.Form
             tabHelper.AddorShowTabPage(barBtn_DailyPlanStatistican.Caption, content);
             GParam.Create().Mediator.AddActor(content.GetType().Name, content);
         }
+
+        private void barBtn_SalaryPlan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UC_SalaryPlan content = new UC_SalaryPlan();
+            tabHelper.AddorShowTabPage(barBtn_SalaryPlan.Caption, content);
+            GParam.Create().Mediator.AddActor(content.GetType().Name, content);
+        }
     }
 }

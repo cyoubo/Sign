@@ -37,28 +37,43 @@ namespace Sign.Module_Sign.View.UControl
         public void onInitialUI()
         {
             DateUtils utils = new DateUtils();
-            tv_daycount.Text = ""+(utils.MonthLastDay(DateTime.Now.Date).Subtract(utils.MonthLastDay(DateTime.Now.Date)).Days + 1);
+            tv_daycount.Text = ""+(utils.MonthLastDay(DateTime.Now.Date).Subtract(utils.MonthFirstDay(DateTime.Now.Date)).Days + 1);
 
-            tv_Consume_Deposit.Text = ""+0;
-            tv_Consume_JD.Text = "" + 0;
-            tv_Consume_Budget.Text = "" + 0;
-            tv_Consume_Redict.Text = "" + 0;
-            tv_Consume_Special.Text = "" + 0;
+            if (calculator.ReadFromXML())
+            {
+                tv_Consume_Deposit.Text = "" + calculator.Entry.Consume_Deposit;
+                tv_Consume_JD.Text = "" + calculator.Entry.Consume_JD;
+                tv_Consume_Budget.Text = "" + calculator.Entry.Consume_Budget;
+                tv_Consume_Redict.Text = "" + calculator.Entry.Consume_Redict;
+                tv_Consume_Special.Text = "" + calculator.Entry.Consume_Special;
+
+                btn_sure.PerformClick();
+            }
+            else
+            {
+                tv_Consume_Deposit.Text = "" + 0;
+                tv_Consume_JD.Text = "" + 0;
+                tv_Consume_Budget.Text = "" + 0;
+                tv_Consume_Redict.Text = "" + 0;
+                tv_Consume_Special.Text = "" + 0;
+            }
         }
 
         public void onExtractInputValue()
         {
-            calculator.Salary = onExtractDouble(tv_salary.Text);
-            calculator.Consume_JD = onExtractDouble(tv_Consume_JD.Text);
-            calculator.Consume_Budget = onExtractDouble(tv_Consume_Budget.Text);
-            calculator.Consume_Deposit = onExtractDouble(tv_Consume_Deposit.Text);
-            calculator.Consume_Special = onExtractDouble(tv_Consume_Special.Text);
-            calculator.Consume_Redict = onExtractDouble(tv_Consume_Redict.Text);
-            calculator.DayCount = onExtractDouble(tv_daycount.Text);
+ 
+            calculator.Entry.Salary = onExtractDouble(tv_salary.Text);
+            calculator.Entry.Consume_JD = onExtractDouble(tv_Consume_JD.Text);
+            calculator.Entry.Consume_Budget = onExtractDouble(tv_Consume_Budget.Text);
+            calculator.Entry.Consume_Deposit = onExtractDouble(tv_Consume_Deposit.Text);
+            calculator.Entry.Consume_Special = onExtractDouble(tv_Consume_Special.Text);
+            calculator.Entry.Consume_Redict = onExtractDouble(tv_Consume_Redict.Text);
+            calculator.Entry.DayCount = onExtractDouble(tv_daycount.Text);
         }
 
         public PS.Plot.FrameBasic.Module_Common.Component.Validator onValidateInputValue()
         {
+            //可以不实现
             return null;
         }
 
@@ -85,6 +100,7 @@ namespace Sign.Module_Sign.View.UControl
             tv_DayCustomWithSpecial.Text = FormatDouble(calculator.DayCustomWithSpecial);
             tv_Rest.Text = FormatDouble(calculator.Rest);
 
+            calculator.SaveToXML();
         }
 
         private void btn_reset_Click(object sender, EventArgs e)

@@ -122,6 +122,7 @@
     <Compile Include="Module_Sign\Model\Const\EnumCourseState.cs" />
     <Compile Include="Module_Sign\Model\Const\EnumDailyPlanState.cs" />
     <Compile Include="Module_Sign\Model\Const\EnumSpecialDailyType.cs" />
+    <Compile Include="Module_Sign\Model\SalaryPlanEntry.cs" />
     <Compile Include="Module_Sign\Model\TB_BudgetCatalog.cs" />
     <Compile Include="Module_Sign\Model\TB_Budget.cs" />
     <Compile Include="Module_Sign\Model\TB_SpecialDaily.cs" />

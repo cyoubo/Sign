@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<SalaryPlanEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Salary>0</Salary>
+  <Consume_JD>43</Consume_JD>
+  <Consume_Redict>1111</Consume_Redict>
+  <Consume_Budget>11100</Consume_Budget>
+  <Consume_Special>0</Consume_Special>
+  <Consume_Deposit>34324</Consume_Deposit>
+  <DayCount>31</DayCount>
+</SalaryPlanEntry>
+>

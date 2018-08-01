@@ -43,3 +43,5 @@ Sign.vshost.exe.manifest
 *.log
 !Sign.log
 
+Properties/licenses.licx
+Properties/licenses.licx

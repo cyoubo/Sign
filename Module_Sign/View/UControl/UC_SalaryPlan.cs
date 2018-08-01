@@ -41,7 +41,8 @@ namespace Sign.Module_Sign.View.UControl
 
             if (calculator.ReadFromXML())
             {
-                tv_Consume_Deposit.Text = "" + calculator.Entry.Consume_Deposit;
+                tv_salary.Text = FormatDouble(calculator.Entry.Salary);
+                tv_Consume_Deposit.Text = FormatDouble(calculator.Entry.Consume_Deposit);
                 tv_Consume_JD.Text = "" + calculator.Entry.Consume_JD;
                 tv_Consume_Budget.Text = "" + calculator.Entry.Consume_Budget;
                 tv_Consume_Redict.Text = "" + calculator.Entry.Consume_Redict;
@@ -51,11 +52,11 @@ namespace Sign.Module_Sign.View.UControl
             }
             else
             {
-                tv_Consume_Deposit.Text = "" + 0;
-                tv_Consume_JD.Text = "" + 0;
-                tv_Consume_Budget.Text = "" + 0;
-                tv_Consume_Redict.Text = "" + 0;
-                tv_Consume_Special.Text = "" + 0;
+                tv_Consume_Deposit.Text = FormatDouble(0);
+                tv_Consume_JD.Text = FormatDouble(0);
+                tv_Consume_Budget.Text = FormatDouble(0);
+                tv_Consume_Redict.Text = FormatDouble(0);
+                tv_Consume_Special.Text = FormatDouble(0);
             }
         }
 

@@ -434,6 +434,8 @@
     <Folder Include="Module_System\Componet\Adapter\" />
     <Folder Include="Module_System\Controller\" />
     <Folder Include="Module_System\View\UControl\" />
+    <Folder Include="Module_Technique\View\Form\" />
+    <Folder Include="Module_Technique\View\UControl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

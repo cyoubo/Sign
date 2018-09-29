@@ -402,6 +402,7 @@
     <EmbeddedResource Include="Module_System\View\Form\Frm_DataBaseConnect.resx">
       <DependentUpon>Frm_DataBaseConnect.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

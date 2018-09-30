@@ -58,6 +58,7 @@
             this.barBtn_SpecialDailyScheduler = new DevExpress.XtraBars.BarButtonItem();
             this.barBtn_DailyPlanSignCompare = new DevExpress.XtraBars.BarButtonItem();
             this.barBtn_DailyPlanStatistican = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtn_SalaryPlan = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -66,14 +67,16 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ContentTabs = new DevExpress.XtraTab.XtraTabControl();
-            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barBtn_SalaryPlan = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barBtn_TechniqueCatalogEdit = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContentTabs)).BeginInit();
             this.SuspendLayout();
@@ -111,23 +114,24 @@
             this.barBtn_SpecialDailyScheduler,
             this.barBtn_DailyPlanSignCompare,
             this.barBtn_DailyPlanStatistican,
-            this.barBtn_SalaryPlan});
+            this.barBtn_SalaryPlan,
+            this.barBtn_TechniqueCatalogEdit});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.ribbonControl1.MaxItemId = 33;
+            this.ribbonControl1.MaxItemId = 34;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage4,
+            this.ribbonPage5,
             this.ribbonPage3,
             this.ribbonPage2});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.ShowQatLocationSelector = false;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(895, 120);
+            this.ribbonControl1.Size = new System.Drawing.Size(1279, 184);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -373,6 +377,15 @@
             this.barBtn_DailyPlanStatistican.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barBtn_DailyPlanStatistican.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_DailyPlanStatistican_ItemClick);
             // 
+            // barBtn_SalaryPlan
+            // 
+            this.barBtn_SalaryPlan.Caption = "工资分配";
+            this.barBtn_SalaryPlan.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtn_SalaryPlan.Glyph")));
+            this.barBtn_SalaryPlan.Id = 32;
+            this.barBtn_SalaryPlan.Name = "barBtn_SalaryPlan";
+            this.barBtn_SalaryPlan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtn_SalaryPlan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_SalaryPlan_ItemClick);
+            // 
             // ribbonPageCategory1
             // 
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
@@ -440,6 +453,12 @@
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "预算管理";
             // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.barBtn_SalaryPlan);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "工资处理";
+            // 
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -483,35 +502,39 @@
             // 
             this.ContentTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContentTabs.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Bottom;
-            this.ContentTabs.Location = new System.Drawing.Point(0, 120);
-            this.ContentTabs.Margin = new System.Windows.Forms.Padding(2);
+            this.ContentTabs.Location = new System.Drawing.Point(0, 184);
             this.ContentTabs.Name = "ContentTabs";
-            this.ContentTabs.Size = new System.Drawing.Size(895, 376);
+            this.ContentTabs.Size = new System.Drawing.Size(1279, 595);
             this.ContentTabs.TabIndex = 1;
             // 
-            // ribbonPageGroup9
+            // ribbonPage5
             // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.barBtn_SalaryPlan);
-            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Text = "工资处理";
+            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup10});
+            this.ribbonPage5.Name = "ribbonPage5";
+            this.ribbonPage5.Text = "技术学习";
             // 
-            // barBtn_SalaryPlan
+            // ribbonPageGroup10
             // 
-            this.barBtn_SalaryPlan.Caption = "工资分配";
-            this.barBtn_SalaryPlan.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtn_SalaryPlan.Glyph")));
-            this.barBtn_SalaryPlan.Id = 32;
-            this.barBtn_SalaryPlan.Name = "barBtn_SalaryPlan";
-            this.barBtn_SalaryPlan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barBtn_SalaryPlan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_SalaryPlan_ItemClick);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barBtn_TechniqueCatalogEdit);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "ribbonPageGroup10";
+            // 
+            // barBtn_TechniqueCatalogEdit
+            // 
+            this.barBtn_TechniqueCatalogEdit.Caption = "技术类型管理";
+            this.barBtn_TechniqueCatalogEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtn_TechniqueCatalogEdit.Glyph")));
+            this.barBtn_TechniqueCatalogEdit.Id = 33;
+            this.barBtn_TechniqueCatalogEdit.Name = "barBtn_TechniqueCatalogEdit";
+            this.barBtn_TechniqueCatalogEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_TechniqueCatalogEdit_ItemClick);
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 496);
+            this.ClientSize = new System.Drawing.Size(1279, 779);
             this.Controls.Add(this.ContentTabs);
             this.Controls.Add(this.ribbonControl1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMain";
             this.ShowIcon = false;
             this.Text = "管理助手";
@@ -570,5 +593,8 @@
         private DevExpress.XtraBars.BarButtonItem barBtn_DailyPlanStatistican;
         private DevExpress.XtraBars.BarButtonItem barBtn_SalaryPlan;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
+        private DevExpress.XtraBars.BarButtonItem barBtn_TechniqueCatalogEdit;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
     }
 }

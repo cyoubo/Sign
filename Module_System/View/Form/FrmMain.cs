@@ -15,6 +15,7 @@ using PS.Plot.FrameBasic.Module_SupportLibs.DevExpressionTools;
 using Sign.Module_Sign.View.UControl;
 using Sign.Module_Sign.View.Form;
 using Sign.Module_Sign.Model.Const;
+using Sign.Module_Technique.View.UControl;
 
 namespace Sign.Module_System.View.Form
 {
@@ -236,6 +237,13 @@ namespace Sign.Module_System.View.Form
         {
             UC_SalaryPlan content = new UC_SalaryPlan();
             tabHelper.AddorShowTabPage(barBtn_SalaryPlan.Caption, content);
+            GParam.Create().Mediator.AddActor(content.GetType().Name, content);
+        }
+
+        private void barBtn_TechniqueCatalogEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UC_TechniqueCatalogEdit content = new UC_TechniqueCatalogEdit();
+            tabHelper.AddorShowTabPage(barBtn_TechniqueCatalogEdit.Caption, content);
             GParam.Create().Mediator.AddActor(content.GetType().Name, content);
         }
     }

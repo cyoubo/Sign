@@ -22,3 +22,16 @@ columns Date, ReadPlanID are not unique
    在 System.Data.SQLite.SQLiteCommand.ExecuteScalar()
    在 Moon.Orm.Sqlite.Add(EntityBase entity)
    在 PS.Plot.FrameBasic.Module_SupportLibs.MoonORM.Controller.EditBaseController`1.InsertEntry() 位置 f:\Space_C#\PS.Plot.FrameBasic\Module_SupportLibs\MoonORM\Controller\EditBaseController.cs:行号 60
+[2018-09-30 10:34:19,804] -- 插入异常
+System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+near ";": syntax error
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteCommand.GetStatement(Int32 index)
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteScalar(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteScalar()
+   在 Moon.Orm.Sqlite.Add(EntityBase entity)
+   在 PS.Plot.FrameBasic.Module_SupportLibs.MoonORM.Controller.EditBaseController2`2.InsertEntry() 位置 e:\Space_C#\PS.Plot.FrameBasic\Module_SupportLibs\MoonORM\Controller\EditBaseController2.cs:行号 55

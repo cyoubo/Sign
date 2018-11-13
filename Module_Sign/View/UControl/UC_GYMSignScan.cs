@@ -15,7 +15,9 @@ using Sign.Module_Sign.Componet.Adapter;
 using Sign.Module_System.Model;
 using Sign.Module_Sign.Model;
 using PS.Plot.FrameBasic.Module_System.DevExpressionTools;
-using PS.Plot.FrameBasic.Module_SupportLibs.DevExpressionTools.SortCommand;
+using DevExpress.XtraScheduler;
+using PS.Plot.FrameBasic.Module_Common.Utils;
+
 
 namespace Sign.Module_Sign.View.UControl
 {
@@ -27,10 +29,7 @@ namespace Sign.Module_Sign.View.UControl
 
         private TB_GYMAPPARATUSAdapter appAdaptor;
         private TB_GYMAPPARATUSBuilder appBuilder;
-        private TB_GYMBaseAdapter baseAdaptor;
-        private TB_GYMBaseBuilder baseBuilder;
 
-        private GridControlHelper gridHelper_Base;
         private GridControlHelper gridHelper_App;
 
         public UC_GYMSignScan()
@@ -50,27 +49,26 @@ namespace Sign.Module_Sign.View.UControl
             gymAppController = new GYMAPPARATUSManageController();
             appAdaptor = new TB_GYMAPPARATUSAdapter();
             appBuilder = new TB_GYMAPPARATUSBuilder();
-            baseAdaptor = new TB_GYMBaseAdapter();
-            baseBuilder = new TB_GYMBaseBuilder();
 
-            gridHelper_Base = new GridControlHelper(this.gridView_signscan, this.gridControl_signscan);
             gridHelper_App = new GridControlHelper(this.gridView_appScan,this.gridControl_appScan);
+            schedulerControl1.Start = new DateUtils().MonthFirstDay(DateTime.Now).Date;
         }
 
         public void onInitialUI()
         {
-            if(baseAdaptor!=null)
-            {
-                baseAdaptor.NotifyClearTable();
-                baseAdaptor.NotifyDestoryTable();
+
+            if(schedulerStorage1!=null)
+                schedulerStorage1.Appointments.Clear();
+            foreach (var item in gymbaseController.TravleAllEntities())
+	        {
+                Appointment appoint =  schedulerStorage1.CreateAppointment(DevExpress.XtraScheduler.AppointmentType.Normal);
+                appoint.Start = DateTime.Parse(item.Date);
+                appoint.AllDay = true;
+                appoint.Subject = string.Format("有氧: {0}", item.Calorie);
+                appoint.Description = ""+item.ID;
+                schedulerStorage1.Appointments.Add(appoint);
             }
-            baseAdaptor.Initial(gymbaseController.TravleAllEntities(), baseBuilder);
-            baseAdaptor.NotifyfreshDataTable();
-            this.gridControl_signscan.DataSource = baseAdaptor.ResultTable;
-            this.gridHelper_Base.SetAllColumnEditable(false);
-            this.gridHelper_Base.SetAllColumnVisible(false);
-            this.gridHelper_Base.SetColunmOption(baseBuilder.Date, false, true);
-            this.gridHelper_Base.Order(baseBuilder.Date, new SortByDateCommand(true));
+            
 
             this.dateE_Date.Text = null;
             this.tv_Calorie.Text = null;
@@ -85,13 +83,15 @@ namespace Sign.Module_Sign.View.UControl
             GParam.Create().Mediator.RemoveActor(typeof(UC_GYMSignScan).Name);
         }
 
-        private void gridView_signscan_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        private void schedulerControl1_SelectionChanged(object sender, EventArgs e)
         {
-            object baseID = this.gridView_signscan.GetFocusedRowCellValue(baseBuilder.ID);
+            if (schedulerControl1.SelectedAppointments.Count == 0)
+                return;
+            string baseID = schedulerControl1.SelectedAppointments[0].Description;
             gymbaseController.CurrentID = int.Parse(baseID.ToString());
             gymbaseController.LoadEntry();
             this.dateE_Date.DateTime = DateTime.Parse(gymbaseController.Entry.Date);
-            this.tv_Calorie.Text = ""+gymbaseController.Entry.Calorie;
+            this.tv_Calorie.Text = "" + gymbaseController.Entry.Calorie;
             this.tv_Other.Text = gymbaseController.Entry.Other;
 
             if (appAdaptor != null)
@@ -109,6 +109,8 @@ namespace Sign.Module_Sign.View.UControl
             this.btn_Update.Enabled = true;
             this.btn_Delete.Enabled = true;
         }
+
+
 
         private void Repo_HLE_Delete_Click(object sender, EventArgs e)
         {
@@ -146,5 +148,7 @@ namespace Sign.Module_Sign.View.UControl
                 MessageBoxHelper.ShowUpdateStateDialog(result);
             }
         }
+
+
     }
 }

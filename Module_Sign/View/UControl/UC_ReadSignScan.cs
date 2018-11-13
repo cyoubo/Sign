@@ -15,9 +15,9 @@ using Sign.Module_Sign.Controller;
 using Sign.Module_System.Model;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using Sign.Module_Sign.Model;
-using PS.Plot.FrameBasic.Module_SupportLibs.DevExpressionTools.SortCommand;
 using PS.Plot.FrameBasic.Module_System.DevExpressionTools;
 using Sign.Module_Sign.Model.Const;
+using PS.Plot.FrameBasic.Module_SupportLibs.DevExpressionTools.GridControlCommand;
 
 namespace Sign.Module_Sign.View.UControl
 {

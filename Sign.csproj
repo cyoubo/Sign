@@ -450,6 +450,7 @@
     <EmbeddedResource Include="Module_Technique\View\Form\Frm_TechniqueEvaluate.resx">
       <DependentUpon>Frm_TechniqueEvaluate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -51,7 +51,9 @@ namespace Sign.Module_Sign.View.UControl
             appBuilder = new TB_GYMAPPARATUSBuilder();
 
             gridHelper_App = new GridControlHelper(this.gridView_appScan,this.gridControl_appScan);
-            schedulerControl1.Start = new DateUtils().MonthFirstDay(DateTime.Now).Date;
+            
+            dateEdit_start.DateTime = new DateUtils().MonthFirstDay(DateTime.Now).Date;
+            dateEdit_end.DateTime = new DateUtils().MonthLastDay(DateTime.Now).Date;
         }
 
         public void onInitialUI()
@@ -59,7 +61,7 @@ namespace Sign.Module_Sign.View.UControl
 
             if(schedulerStorage1!=null)
                 schedulerStorage1.Appointments.Clear();
-            foreach (var item in gymbaseController.TravleAllEntities())
+            foreach (var item in gymbaseController.QueryEntryBetweenDataRange(dateEdit_start.DateTime,dateEdit_end.DateTime))
 	        {
                 Appointment appoint =  schedulerStorage1.CreateAppointment(DevExpress.XtraScheduler.AppointmentType.Normal);
                 appoint.Start = DateTime.Parse(item.Date);
@@ -76,6 +78,8 @@ namespace Sign.Module_Sign.View.UControl
             this.btn_Delete.Enabled = false;
             this.btn_Update.Enabled = false;
             this.gridControl_appScan.DataSource = null;
+
+            schedulerControl1.Start = dateEdit_start.DateTime;
         }
 
         public void onPageClosed(object sender, EventArgs e)
@@ -110,6 +114,18 @@ namespace Sign.Module_Sign.View.UControl
             this.btn_Delete.Enabled = true;
         }
 
+        private void btn_query_Click(object sender, EventArgs e)
+        {
+            this.onInitialUI();
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            dateEdit_start.DateTime = new DateUtils().MonthFirstDay(DateTime.Now).Date;
+            dateEdit_end.DateTime = new DateUtils().MonthLastDay(DateTime.Now).Date;
+
+            this.onInitialUI();
+        }
 
 
         private void Repo_HLE_Delete_Click(object sender, EventArgs e)
@@ -148,6 +164,7 @@ namespace Sign.Module_Sign.View.UControl
                 MessageBoxHelper.ShowUpdateStateDialog(result);
             }
         }
+
 
 
     }

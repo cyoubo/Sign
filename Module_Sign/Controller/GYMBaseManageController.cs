@@ -71,5 +71,17 @@ namespace Sign.Module_Sign.Controller
             }
             return result;
         }
+
+        public IList<TB_GYMBase> QueryEntryBetweenDataRange(DateTime dateTime1, DateTime dateTime2)
+        {
+            List<TB_GYMBase> result = new List<TB_GYMBase>();
+            using (var db = this.dbFactory.OpenDefalutDataBase())
+            {
+                string str_StartDate = FormatDate(dateTime1);
+                string str_EndDate = FormatDate(dateTime2);
+                result.AddRange(db.GetEntities<TB_GYMBase>(TB_GYMBaseSet.SelectAll().Where(TB_GYMBaseSet.Date.Between<string>(str_StartDate, str_EndDate))));
+            }
+            return result;
+        }
     }
 }

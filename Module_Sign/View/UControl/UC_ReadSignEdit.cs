@@ -18,15 +18,14 @@ using Sign.Module_System.Model;
 using PS.Plot.FrameBasic.Module_System.DevExpressionTools;
 using Sign.Module_Sign.Model.Const;
 using DevExpress.XtraScheduler;
+using PS.Plot.FrameBasic.Module_Common.Utils;
 
 namespace Sign.Module_Sign.View.UControl
 {
     public partial class UC_ReadSignEdit : DevExpress.XtraEditors.XtraUserControl, IInitialUI, IValidateInput2, ITabPageCloseCallBack
     {
-        // private TB_BookReadSignBuilder builder;
-        // private TB_BookReadSignAdapter adapter;
+ 
         private ReadSignManageController controller;
-        //private GridControlHelper gridHelper;
 
         public UC_ReadSignEdit()
         {
@@ -41,48 +40,35 @@ namespace Sign.Module_Sign.View.UControl
 
         public void onCreateComponet()
         {
-            //adapter = new TB_BookReadSignAdapter();
-            //builder = new TB_BookReadSignBuilder();
+
             controller = new ReadSignManageController();
-            //gridHelper = new GridControlHelper(this.gridView_Sign, this.gridControl_Sign);
+
+            this.calendar_Date.DateTime = DateTime.Now.Date;
+            this.dateEdit_Start.DateTime = new DateUtils().MonthFirstDay(DateTime.Now.Date);
+            this.dateEdit_End.DateTime = new DateUtils().MonthLastDay(DateTime.Now.Date);
         }
 
         public void onInitialUI()
         {
-            //if (adapter != null)
-            //{
-            //    adapter.NotifyClearTable();
-            //    adapter.NotifyDestoryTable();
-            //}
-
 
             IDictionary<long, string> dict = new ReadPlanManageController().CreateCatalogNameMap();
             this.schedulerStorage1.Appointments.Clear();
-            foreach (var item in controller.TravleAllEntities())
+            foreach (var item in controller.QueryEntryInDateRange(dateEdit_Start.DateTime.Date, dateEdit_End.DateTime.Date))
             {
-               Appointment appoint =  this.schedulerStorage1.CreateAppointment(DevExpress.XtraScheduler.AppointmentType.Normal);
-               appoint.Start = DateTime.Parse(item.Date);
-               appoint.End = DateTime.Parse(item.Date);
-               appoint.Subject = dict[item.ReadPlanID];
-               appoint.AllDay = true;
-               this.schedulerStorage1.Appointments.Add(appoint);
+                Appointment appoint = this.schedulerStorage1.CreateAppointment(DevExpress.XtraScheduler.AppointmentType.Normal);
+                appoint.Start = DateTime.Parse(item.Date);
+                appoint.End = DateTime.Parse(item.Date);
+                appoint.Subject = dict[item.ReadPlanID];
+                appoint.AllDay = true;
+                this.schedulerStorage1.Appointments.Add(appoint);
             }
             dict.Clear();
+            this.schedulerControl1.Start = this.dateEdit_Start.DateTime;
 
-            this.calendar_Date.DateTime = DateTime.Now.Date;
 
             cmb_readplan.Properties.Items.Clear();
             foreach (var item in new ReadPlanManageController().QueryUnFinishReadPlan())
                 cmb_readplan.Properties.Items.Add(item);
-
-            //adapter.Initial(controller.TravleAllEntities(), builder);
-            //adapter.NotifyfreshDataTable();
-
-            //gridHelper.GridControl.DataSource = adapter.ResultTable;
-            //gridHelper.SetAllColumnEditable(false);
-            //gridHelper.setColunmsVisual(false, builder.ID,builder.Op_Delete,builder.Op_Edit,builder.ReadPlanID);
-
-            
         }
 
         public void onExtractInputValue()
@@ -125,6 +111,19 @@ namespace Sign.Module_Sign.View.UControl
             }
             else
                 MessageBoxHelper.ShowCreateStateDialog(false);
+        }
+
+        private void btn_query_Click(object sender, EventArgs e)
+        {
+            this.onInitialUI();
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            this.dateEdit_Start.DateTime = new DateUtils().MonthFirstDay(DateTime.Now.Date);
+            this.dateEdit_End.DateTime = new DateUtils().MonthLastDay(DateTime.Now.Date);
+
+            this.onInitialUI();
         }
     }
 }

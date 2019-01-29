@@ -108,6 +108,7 @@ namespace Sign.Module_Sign.View.UControl
                 appoint.End = appoint.End;
                 schedulerStorage1.Appointments.Add(appoint);
             }
+            schedulerControl1.Start = dateEdit_Start.DateTime;
             if (adapter != null)
             {
                 adapter.NotifyClearTable();

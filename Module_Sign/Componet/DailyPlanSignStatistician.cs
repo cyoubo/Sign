@@ -150,7 +150,7 @@ namespace Sign.Module_Sign.Componet
                     row[1] = count;
                     DataRow row1 = result.NewRow();
                     row1[0] = "未打卡天数";
-                    row1[1] = endDate.Subtract(startDate).Days + 1;
+                    row1[1] = endDate.Subtract(startDate).Days + 1 - count;
 
                     result.Rows.Add(row1);
                     result.Rows.Add(row);

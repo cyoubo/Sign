@@ -60,5 +60,17 @@ namespace Sign.Module_Sign.Controller
             }
             return result;
         }
+
+        public IList<TB_BookReadSign> QueryEntryInDateRange(DateTime dateTime1, DateTime dateTime2)
+        {
+            List<TB_BookReadSign> result = new List<TB_BookReadSign>();
+            using (var db = this.dbFactory.OpenDefalutDataBase())
+            {
+                string str_start = FormatDate(dateTime1);
+                string str_end = FormatDate(dateTime2);
+                result.AddRange(db.GetEntities<TB_BookReadSign>(TB_BookReadSignSet.SelectAll().Where(TB_BookReadSignSet.Date.Between<string>(str_start, str_end))));
+            }
+            return result;
+        }
     }
 }

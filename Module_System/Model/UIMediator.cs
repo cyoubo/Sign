@@ -45,12 +45,7 @@ namespace Sign.Module_System.Model
                 content.onInitialUI();
         }
 
-        internal void NotifyUpdateCourseEdit()
-        {
-            UC_CourseEdit content = GetActor(typeof(UC_CourseEdit).Name) as UC_CourseEdit;
-            if (content != null)
-                content.onInitialUI();
-        }
+        
 
         public void NotifyDailyPlanSignScan()
         {

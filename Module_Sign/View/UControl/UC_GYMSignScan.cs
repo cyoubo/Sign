@@ -70,6 +70,18 @@ namespace Sign.Module_Sign.View.UControl
                 appoint.Description = ""+item.ID;
                 schedulerStorage1.Appointments.Add(appoint);
             }
+
+            if (cke_loadOtherEx.Checked)
+            {
+                foreach (var item in new DailyPlanSignManageController().QueryEntryByDateAndCatalog(dateEdit_start.DateTime, dateEdit_end.DateTime, 4))
+                {
+                    Appointment appoint = schedulerStorage1.CreateAppointment(DevExpress.XtraScheduler.AppointmentType.Normal);
+                    appoint.Start = DateTime.Parse(item.Date);
+                    appoint.AllDay = true;
+                    appoint.Subject = string.Format("其他锻炼: {0}", item.Other);
+                    schedulerStorage1.Appointments.Add(appoint);
+                }
+            }
             
 
             this.dateE_Date.Text = null;
@@ -92,6 +104,9 @@ namespace Sign.Module_Sign.View.UControl
             if (schedulerControl1.SelectedAppointments.Count == 0)
                 return;
             string baseID = schedulerControl1.SelectedAppointments[0].Description;
+            if (string.IsNullOrEmpty(baseID))
+                return;
+
             gymbaseController.CurrentID = int.Parse(baseID.ToString());
             gymbaseController.LoadEntry();
             this.dateE_Date.DateTime = DateTime.Parse(gymbaseController.Entry.Date);
@@ -163,6 +178,11 @@ namespace Sign.Module_Sign.View.UControl
                 }
                 MessageBoxHelper.ShowUpdateStateDialog(result);
             }
+        }
+
+        private void cke_loadOtherEx_CheckedChanged(object sender, EventArgs e)
+        {
+            this.onInitialUI();
         }
 
 

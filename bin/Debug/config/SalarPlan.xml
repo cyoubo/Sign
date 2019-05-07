@@ -1,13 +1,10 @@
 <?xml version="1.0"?>
 <SalaryPlanEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Salary>0</Salary>
+  <Salary>16700</Salary>
   <Consume_JD>0</Consume_JD>
-  <Consume_Redict>0</Consume_Redict>
-  <Consume_Budget>0</Consume_Budget>
-  <Consume_Special>0</Consume_Special>
-  <Consume_Deposit>0</Consume_Deposit>
-  <DayCount>30</DayCount>
+  <Consume_Redict>2000.1</Consume_Redict>
+  <Consume_Budget>1000</Consume_Budget>
+  <Consume_Special>500</Consume_Special>
+  <Consume_Deposit>11000</Consume_Deposit>
+  <DayCount>28</DayCount>
 </SalaryPlanEntry>
-lanEntry>
->
-

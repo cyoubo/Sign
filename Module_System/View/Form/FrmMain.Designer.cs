@@ -36,16 +36,12 @@
             this.barBtn_GYMSign = new DevExpress.XtraBars.BarButtonItem();
             this.barBtn_GYMCatalog = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.BarBtn_CourseSign = new DevExpress.XtraBars.BarButtonItem();
-            this.barBtn_CourseEdit = new DevExpress.XtraBars.BarButtonItem();
-            this.BarBtn_CourseScan = new DevExpress.XtraBars.BarButtonItem();
             this.barBtn_DailyPlanSign = new DevExpress.XtraBars.BarButtonItem();
             this.barBtn_DailyCatalog = new DevExpress.XtraBars.BarButtonItem();
             this.barBtn_DailyPlanSignScan = new DevExpress.XtraBars.BarButtonItem();
             this.barBtn_DataBaseConnect = new DevExpress.XtraBars.BarButtonItem();
             this.barBtn_ReadSign = new DevExpress.XtraBars.BarButtonItem();
             this.BarBtn_DailyPlanUpdate = new DevExpress.XtraBars.BarButtonItem();
-            this.BarBtn_CourseCatalogEdit = new DevExpress.XtraBars.BarButtonItem();
             this.BarBtn_BussinisTravel = new DevExpress.XtraBars.BarButtonItem();
             this.barBtn_Disease = new DevExpress.XtraBars.BarButtonItem();
             this.barBtn_VacationTravel = new DevExpress.XtraBars.BarButtonItem();
@@ -59,12 +55,12 @@
             this.barBtn_DailyPlanSignCompare = new DevExpress.XtraBars.BarButtonItem();
             this.barBtn_DailyPlanStatistican = new DevExpress.XtraBars.BarButtonItem();
             this.barBtn_SalaryPlan = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
+            this.barBtn_UC_ExportBusinesStripExcel = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -74,9 +70,6 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ContentTabs = new DevExpress.XtraTab.XtraTabControl();
-            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barBtn_TechniqueCatalogEdit = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContentTabs)).BeginInit();
             this.SuspendLayout();
@@ -92,16 +85,12 @@
             this.barBtn_GYMSign,
             this.barBtn_GYMCatalog,
             this.barButtonItem3,
-            this.BarBtn_CourseSign,
-            this.barBtn_CourseEdit,
-            this.BarBtn_CourseScan,
             this.barBtn_DailyPlanSign,
             this.barBtn_DailyCatalog,
             this.barBtn_DailyPlanSignScan,
             this.barBtn_DataBaseConnect,
             this.barBtn_ReadSign,
             this.BarBtn_DailyPlanUpdate,
-            this.BarBtn_CourseCatalogEdit,
             this.BarBtn_BussinisTravel,
             this.barBtn_Disease,
             this.barBtn_VacationTravel,
@@ -115,23 +104,23 @@
             this.barBtn_DailyPlanSignCompare,
             this.barBtn_DailyPlanStatistican,
             this.barBtn_SalaryPlan,
-            this.barBtn_TechniqueCatalogEdit});
+            this.barBtn_UC_ExportBusinesStripExcel});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 34;
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.ribbonControl1.MaxItemId = 35;
             this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
-            this.ribbonPageCategory1});
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage4,
-            this.ribbonPage5,
             this.ribbonPage3,
             this.ribbonPage2});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.ShowQatLocationSelector = false;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(1279, 184);
+            this.ribbonControl1.Size = new System.Drawing.Size(895, 147);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -185,31 +174,6 @@
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
-            // BarBtn_CourseSign
-            // 
-            this.BarBtn_CourseSign.Caption = "课程打卡";
-            this.BarBtn_CourseSign.Glyph = ((System.Drawing.Image)(resources.GetObject("BarBtn_CourseSign.Glyph")));
-            this.BarBtn_CourseSign.Id = 7;
-            this.BarBtn_CourseSign.Name = "BarBtn_CourseSign";
-            this.BarBtn_CourseSign.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.BarBtn_CourseSign.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarBtn_CourseSign_ItemClick);
-            // 
-            // barBtn_CourseEdit
-            // 
-            this.barBtn_CourseEdit.Caption = "课程管理";
-            this.barBtn_CourseEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtn_CourseEdit.Glyph")));
-            this.barBtn_CourseEdit.Id = 8;
-            this.barBtn_CourseEdit.Name = "barBtn_CourseEdit";
-            this.barBtn_CourseEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_CourseEdit_ItemClick);
-            // 
-            // BarBtn_CourseScan
-            // 
-            this.BarBtn_CourseScan.Caption = "课程浏览";
-            this.BarBtn_CourseScan.Glyph = ((System.Drawing.Image)(resources.GetObject("BarBtn_CourseScan.Glyph")));
-            this.BarBtn_CourseScan.Id = 9;
-            this.BarBtn_CourseScan.Name = "BarBtn_CourseScan";
-            this.BarBtn_CourseScan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarBtn_CourseScan_ItemClick);
-            // 
             // barBtn_DailyPlanSign
             // 
             this.barBtn_DailyPlanSign.Caption = "常规打卡";
@@ -261,14 +225,6 @@
             this.BarBtn_DailyPlanUpdate.Name = "BarBtn_DailyPlanUpdate";
             this.BarBtn_DailyPlanUpdate.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             this.BarBtn_DailyPlanUpdate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarBtn_DailyPlanUpdate_ItemClick);
-            // 
-            // BarBtn_CourseCatalogEdit
-            // 
-            this.BarBtn_CourseCatalogEdit.Caption = "课程类别";
-            this.BarBtn_CourseCatalogEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("BarBtn_CourseCatalogEdit.Glyph")));
-            this.BarBtn_CourseCatalogEdit.Id = 16;
-            this.BarBtn_CourseCatalogEdit.Name = "BarBtn_CourseCatalogEdit";
-            this.BarBtn_CourseCatalogEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarBtn_CourseCatalogEdit_ItemClick);
             // 
             // BarBtn_BussinisTravel
             // 
@@ -386,18 +342,22 @@
             this.barBtn_SalaryPlan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barBtn_SalaryPlan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_SalaryPlan_ItemClick);
             // 
-            // ribbonPageCategory1
+            // barBtn_UC_ExportBusinesStripExcel
             // 
-            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
-            this.ribbonPageCategory1.Text = "ribbonPageCategory1";
+            this.barBtn_UC_ExportBusinesStripExcel.Caption = "导出出差模板";
+            this.barBtn_UC_ExportBusinesStripExcel.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtn_UC_ExportBusinesStripExcel.Glyph")));
+            this.barBtn_UC_ExportBusinesStripExcel.Id = 34;
+            this.barBtn_UC_ExportBusinesStripExcel.Name = "barBtn_UC_ExportBusinesStripExcel";
+            this.barBtn_UC_ExportBusinesStripExcel.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtn_UC_ExportBusinesStripExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_UC_ExportBusinesStripExcel_ItemClick);
             // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
-            this.ribbonPageGroup4,
-            this.ribbonPageGroup3});
+            this.ribbonPageGroup3,
+            this.ribbonPageGroup11});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "日常打卡";
             // 
@@ -418,15 +378,6 @@
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Gym锻炼";
             // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.BarBtn_CourseSign);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barBtn_CourseEdit);
-            this.ribbonPageGroup4.ItemLinks.Add(this.BarBtn_CourseScan);
-            this.ribbonPageGroup4.ItemLinks.Add(this.BarBtn_CourseCatalogEdit);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "课程打卡";
-            // 
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barBtn_DailyPlanSign);
@@ -435,6 +386,12 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.BarBtn_DailyPlanUpdate);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "常规活动";
+            // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.barBtn_UC_ExportBusinesStripExcel);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Text = "出差管理";
             // 
             // ribbonPage4
             // 
@@ -502,40 +459,22 @@
             // 
             this.ContentTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContentTabs.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Bottom;
-            this.ContentTabs.Location = new System.Drawing.Point(0, 184);
+            this.ContentTabs.Location = new System.Drawing.Point(0, 147);
+            this.ContentTabs.Margin = new System.Windows.Forms.Padding(2);
             this.ContentTabs.Name = "ContentTabs";
-            this.ContentTabs.Size = new System.Drawing.Size(1279, 595);
+            this.ContentTabs.Size = new System.Drawing.Size(895, 349);
             this.ContentTabs.TabIndex = 1;
-            // 
-            // ribbonPage5
-            // 
-            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup10});
-            this.ribbonPage5.Name = "ribbonPage5";
-            this.ribbonPage5.Text = "技术学习";
-            // 
-            // ribbonPageGroup10
-            // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.barBtn_TechniqueCatalogEdit);
-            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            this.ribbonPageGroup10.Text = "ribbonPageGroup10";
-            // 
-            // barBtn_TechniqueCatalogEdit
-            // 
-            this.barBtn_TechniqueCatalogEdit.Caption = "技术类型管理";
-            this.barBtn_TechniqueCatalogEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtn_TechniqueCatalogEdit.Glyph")));
-            this.barBtn_TechniqueCatalogEdit.Id = 33;
-            this.barBtn_TechniqueCatalogEdit.Name = "barBtn_TechniqueCatalogEdit";
-            this.barBtn_TechniqueCatalogEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_TechniqueCatalogEdit_ItemClick);
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1279, 779);
+            this.ClientSize = new System.Drawing.Size(895, 496);
             this.Controls.Add(this.ContentTabs);
             this.Controls.Add(this.ribbonControl1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMain";
+            this.Ribbon = this.ribbonControl1;
             this.ShowIcon = false;
             this.Text = "管理助手";
             this.Load += new System.EventHandler(this.FrmMain_Load);
@@ -559,10 +498,6 @@
         private DevExpress.XtraBars.BarButtonItem barBtn_GYMCatalog;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraBars.BarButtonItem BarBtn_CourseSign;
-        private DevExpress.XtraBars.BarButtonItem barBtn_CourseEdit;
-        private DevExpress.XtraBars.BarButtonItem BarBtn_CourseScan;
         private DevExpress.XtraBars.BarButtonItem barBtn_DailyPlanSign;
         private DevExpress.XtraBars.BarButtonItem barBtn_DailyCatalog;
         private DevExpress.XtraBars.BarButtonItem barBtn_DailyPlanSignScan;
@@ -572,8 +507,6 @@
         private DevExpress.XtraTab.XtraTabControl ContentTabs;
         private DevExpress.XtraBars.BarButtonItem barBtn_ReadSign;
         private DevExpress.XtraBars.BarButtonItem BarBtn_DailyPlanUpdate;
-        private DevExpress.XtraBars.BarButtonItem BarBtn_CourseCatalogEdit;
-        private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.BarButtonItem BarBtn_BussinisTravel;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
@@ -593,8 +526,7 @@
         private DevExpress.XtraBars.BarButtonItem barBtn_DailyPlanStatistican;
         private DevExpress.XtraBars.BarButtonItem barBtn_SalaryPlan;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
-        private DevExpress.XtraBars.BarButtonItem barBtn_TechniqueCatalogEdit;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
+        private DevExpress.XtraBars.BarButtonItem barBtn_UC_ExportBusinesStripExcel;
     }
 }

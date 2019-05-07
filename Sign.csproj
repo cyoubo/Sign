@@ -94,9 +94,6 @@
     <Compile Include="Module_Sign\Componet\Adapter\TB_BookReadSignAdapter.cs" />
     <Compile Include="Module_Sign\Componet\Adapter\TB_BudgetAdapter.cs" />
     <Compile Include="Module_Sign\Componet\Adapter\TB_BudgetCatalogAdapter.cs" />
-    <Compile Include="Module_Sign\Componet\Adapter\TB_CourseAdapter.cs" />
-    <Compile Include="Module_Sign\Componet\Adapter\TB_CourseCatalogAdapter.cs" />
-    <Compile Include="Module_Sign\Componet\Adapter\TB_CourseSignAdapter.cs" />
     <Compile Include="Module_Sign\Componet\Adapter\TB_DailyPlanCatalogAdapter.cs" />
     <Compile Include="Module_Sign\Componet\Adapter\TB_DailyPlanSignAdapter.cs" />
     <Compile Include="Module_Sign\Componet\Adapter\TB_GYMAPPARATUSAdapter.cs" />
@@ -104,6 +101,7 @@
     <Compile Include="Module_Sign\Componet\Adapter\TB_GYMCatalogAdapter.cs" />
     <Compile Include="Module_Sign\Componet\Adapter\TB_ReadPlanAdapter.cs" />
     <Compile Include="Module_Sign\Componet\BudgetStatistician.cs" />
+    <Compile Include="Module_Sign\Componet\BusinesStripExcelInvoker.cs" />
     <Compile Include="Module_Sign\Componet\Command\DailySignFinishStateHighlightCommand.cs" />
     <Compile Include="Module_Sign\Componet\Command\DailySignTypeHighlightCommand.cs" />
     <Compile Include="Module_Sign\Componet\DailyPlanSignStatistician.cs" />
@@ -114,9 +112,6 @@
     <Compile Include="Module_Sign\Controller\BudgetCatalogManageController.cs" />
     <Compile Include="Module_Sign\Controller\BudgetManageController.cs" />
     <Compile Include="Module_Sign\Controller\ReadCatalogManageController.cs" />
-    <Compile Include="Module_Sign\Controller\CourseCatalogManageController.cs" />
-    <Compile Include="Module_Sign\Controller\CourseManageController.cs" />
-    <Compile Include="Module_Sign\Controller\CourseSignManageController.cs" />
     <Compile Include="Module_Sign\Controller\DailyPlanCatalogManageController.cs" />
     <Compile Include="Module_Sign\Controller\DailyPlanSignManageController.cs" />
     <Compile Include="Module_Sign\Controller\GYMAPPARATUSManageController.cs" />
@@ -127,16 +122,12 @@
     <Compile Include="Module_Sign\Controller\SpecialDailyManageController.cs" />
     <Compile Include="Module_Sign\Model\Const\EnumBookPlanState.cs" />
     <Compile Include="Module_Sign\Model\Const\EnumBudgetState.cs" />
-    <Compile Include="Module_Sign\Model\Const\EnumCourseState.cs" />
     <Compile Include="Module_Sign\Model\Const\EnumDailyPlanState.cs" />
     <Compile Include="Module_Sign\Model\Const\EnumSpecialDailyType.cs" />
     <Compile Include="Module_Sign\Model\SalaryPlanEntry.cs" />
     <Compile Include="Module_Sign\Model\TB_BudgetCatalog.cs" />
     <Compile Include="Module_Sign\Model\TB_Budget.cs" />
     <Compile Include="Module_Sign\Model\TB_SpecialDaily.cs" />
-    <Compile Include="Module_Sign\Model\TB_Course.cs" />
-    <Compile Include="Module_Sign\Model\TB_CourseCatalog.cs" />
-    <Compile Include="Module_Sign\Model\TB_CourseSign.cs" />
     <Compile Include="Module_Sign\Model\TB_DailyPlanSign.cs" />
     <Compile Include="Module_Sign\Model\TB_DailyPlanCatalog.cs" />
     <Compile Include="Module_Sign\Model\TB_GYMAPPARATUS.cs" />
@@ -150,12 +141,6 @@
     </Compile>
     <Compile Include="Module_Sign\View\Form\FrmBudgetCatalogEdit.Designer.cs">
       <DependentUpon>FrmBudgetCatalogEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Sign\View\Form\FrmCourseCatalogEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Module_Sign\View\Form\FrmCourseCatalogEdit.Designer.cs">
-      <DependentUpon>FrmCourseCatalogEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Module_Sign\View\Form\FrmDailyPlanCatalogEdit.cs">
       <SubType>Form</SubType>
@@ -187,17 +172,17 @@
     <Compile Include="Module_Sign\View\UControl\UC_DailyPlanSignStatistician.designer.cs">
       <DependentUpon>UC_DailyPlanSignStatistician.cs</DependentUpon>
     </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_ExportBusinesStripExcel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Sign\View\UControl\UC_ExportBusinesStripExcel.Designer.cs">
+      <DependentUpon>UC_ExportBusinesStripExcel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Module_Sign\View\UControl\UC_ReadPlanCompare.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Module_Sign\View\UControl\UC_ReadPlanCompare.Designer.cs">
       <DependentUpon>UC_ReadPlanCompare.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Sign\View\UControl\UC_ReadSignCalender.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Module_Sign\View\UControl\UC_ReadSignCalender.Designer.cs">
-      <DependentUpon>UC_ReadSignCalender.cs</DependentUpon>
     </Compile>
     <Compile Include="Module_Sign\View\UControl\UC_ReadSignScan.cs">
       <SubType>UserControl</SubType>
@@ -228,24 +213,6 @@
     </Compile>
     <Compile Include="Module_Sign\View\UControl\UC_BudgetWeed.Designer.cs">
       <DependentUpon>UC_BudgetWeed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Sign\View\UControl\UC_CourseEdit.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Module_Sign\View\UControl\UC_CourseEdit.Designer.cs">
-      <DependentUpon>UC_CourseEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Sign\View\UControl\UC_CourseScan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Module_Sign\View\UControl\UC_CourseScan.Designer.cs">
-      <DependentUpon>UC_CourseScan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Sign\View\UControl\UC_CourseSignEdit.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Module_Sign\View\UControl\UC_CourseSignEdit.Designer.cs">
-      <DependentUpon>UC_CourseSignEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Module_Sign\View\UControl\UC_DailyPlanSignScan.cs">
       <SubType>UserControl</SubType>
@@ -321,37 +288,6 @@
     <Compile Include="Module_System\View\Form\Frm_DataBaseConnect.designer.cs">
       <DependentUpon>Frm_DataBaseConnect.cs</DependentUpon>
     </Compile>
-    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueAdapter.cs" />
-    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueCatalogAdapter.cs" />
-    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueEvaluationAdapter.cs" />
-    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueRegisterAdapter.cs" />
-    <Compile Include="Module_Technique\Componet\Enum\TechniqueEnums.cs" />
-    <Compile Include="Module_Technique\Controller\TechniqueController.cs" />
-    <Compile Include="Module_Technique\Controller\TechniqueCatalogController.cs" />
-    <Compile Include="Module_Technique\Controller\TechniqueEvaluationController.cs" />
-    <Compile Include="Module_Technique\Controller\TechniqueRegisterController.cs" />
-    <Compile Include="Module_Technique\Model\TB_Technique.cs" />
-    <Compile Include="Module_Technique\Model\TB_TechniqueCatalog.cs" />
-    <Compile Include="Module_Technique\Model\TB_TechniqueEvaluation.cs" />
-    <Compile Include="Module_Technique\Model\TB_TechniqueRegister.cs" />
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueCatalogEdit.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueCatalogEdit.Designer.cs">
-      <DependentUpon>UC_TechniqueCatalogEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueScan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueScan.Designer.cs">
-      <DependentUpon>UC_TechniqueScan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Technique\View\Form\Frm_TechniqueEvaluate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Module_Technique\View\Form\Frm_TechniqueEvaluate.Designer.cs">
-      <DependentUpon>Frm_TechniqueEvaluate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Module_Sign\View\Form\FrmBookCatalogEdit.resx">
@@ -359,9 +295,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Module_Sign\View\Form\FrmBudgetCatalogEdit.resx">
       <DependentUpon>FrmBudgetCatalogEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Sign\View\Form\FrmCourseCatalogEdit.resx">
-      <DependentUpon>FrmCourseCatalogEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Module_Sign\View\Form\FrmDailyPlanCatalogEdit.resx">
       <DependentUpon>FrmDailyPlanCatalogEdit.cs</DependentUpon>
@@ -378,11 +311,11 @@
     <EmbeddedResource Include="Module_Sign\View\UControl\UC_DailyPlanSignStatistician.resx">
       <DependentUpon>UC_DailyPlanSignStatistician.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Module_Sign\View\UControl\UC_ExportBusinesStripExcel.resx">
+      <DependentUpon>UC_ExportBusinesStripExcel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Module_Sign\View\UControl\UC_ReadPlanCompare.resx">
       <DependentUpon>UC_ReadPlanCompare.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Sign\View\UControl\UC_ReadSignCalender.resx">
-      <DependentUpon>UC_ReadSignCalender.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Module_Sign\View\UControl\UC_ReadSignScan.resx">
       <DependentUpon>UC_ReadSignScan.cs</DependentUpon>
@@ -401,15 +334,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Module_Sign\View\UControl\UC_BudgetWeed.resx">
       <DependentUpon>UC_BudgetWeed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Sign\View\UControl\UC_CourseEdit.resx">
-      <DependentUpon>UC_CourseEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Sign\View\UControl\UC_CourseScan.resx">
-      <DependentUpon>UC_CourseScan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Sign\View\UControl\UC_CourseSignEdit.resx">
-      <DependentUpon>UC_CourseSignEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Module_Sign\View\UControl\UC_DailyPlanSignScan.resx">
       <DependentUpon>UC_DailyPlanSignScan.cs</DependentUpon>
@@ -441,16 +365,6 @@
     <EmbeddedResource Include="Module_System\View\Form\Frm_DataBaseConnect.resx">
       <DependentUpon>Frm_DataBaseConnect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueCatalogEdit.resx">
-      <DependentUpon>UC_TechniqueCatalogEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueScan.resx">
-      <DependentUpon>UC_TechniqueScan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Technique\View\Form\Frm_TechniqueEvaluate.resx">
-      <DependentUpon>Frm_TechniqueEvaluate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -483,7 +397,6 @@
     <Folder Include="Module_System\Componet\Adapter\" />
     <Folder Include="Module_System\Controller\" />
     <Folder Include="Module_System\View\UControl\" />
-    <Folder Include="Module_Technique\Manager\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

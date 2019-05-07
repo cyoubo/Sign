@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ReadSignEdit));
-            DevExpress.XtraScheduler.TimeRuler timeRuler4 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler5 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler6 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler3 = new DevExpress.XtraScheduler.TimeRuler();
             this.btn_Sure = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.tv_Other = new DevExpress.XtraEditors.MemoEdit();
@@ -331,6 +331,7 @@
             this.schedulerControl1.OptionsCustomization.AllowAppointmentEdit = DevExpress.XtraScheduler.UsedAppointmentType.None;
             this.schedulerControl1.OptionsCustomization.AllowAppointmentMultiSelect = false;
             this.schedulerControl1.OptionsCustomization.AllowInplaceEditor = DevExpress.XtraScheduler.UsedAppointmentType.None;
+            this.schedulerControl1.OptionsView.NavigationButtons.Visibility = DevExpress.XtraScheduler.NavigationButtonVisibility.Never;
             this.schedulerControl1.Size = new System.Drawing.Size(498, 388);
             this.schedulerControl1.Start = new System.DateTime(2018, 7, 2, 0, 0, 0, 0);
             this.schedulerControl1.Storage = this.schedulerStorage1;
@@ -338,16 +339,16 @@
             this.schedulerControl1.Text = "schedulerControl1";
             this.schedulerControl1.Views.DayView.AllDayAreaScrollBarVisible = false;
             this.schedulerControl1.Views.DayView.Enabled = false;
-            this.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler4);
+            this.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler1);
             this.schedulerControl1.Views.FullWeekView.AllDayAreaScrollBarVisible = false;
-            this.schedulerControl1.Views.FullWeekView.TimeRulers.Add(timeRuler5);
+            this.schedulerControl1.Views.FullWeekView.TimeRulers.Add(timeRuler2);
             this.schedulerControl1.Views.GanttView.Enabled = false;
             this.schedulerControl1.Views.TimelineView.Enabled = false;
             this.schedulerControl1.Views.TimelineView.TimelineScrollBarVisible = false;
             this.schedulerControl1.Views.WeekView.Enabled = false;
             this.schedulerControl1.Views.WorkWeekView.AllDayAreaScrollBarVisible = false;
             this.schedulerControl1.Views.WorkWeekView.Enabled = false;
-            this.schedulerControl1.Views.WorkWeekView.TimeRulers.Add(timeRuler6);
+            this.schedulerControl1.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
             // 
             // schedulerStorage1
             // 

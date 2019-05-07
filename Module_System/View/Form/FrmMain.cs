@@ -15,11 +15,10 @@ using PS.Plot.FrameBasic.Module_SupportLibs.DevExpressionTools;
 using Sign.Module_Sign.View.UControl;
 using Sign.Module_Sign.View.Form;
 using Sign.Module_Sign.Model.Const;
-using Sign.Module_Technique.View.UControl;
 
 namespace Sign.Module_System.View.Form
 {
-    public partial class FrmMain : DevExpress.XtraEditors.XtraForm, IInitialUI
+    public partial class FrmMain : DevExpress.XtraBars.Ribbon.RibbonForm, IInitialUI
     {
         TabControlHelper tabHelper;
 
@@ -121,32 +120,9 @@ namespace Sign.Module_System.View.Form
             GParam.Create().Mediator.AddActor(typeof(UC_DailyPlanSignUpdate).Name, content);
         }
 
-        private void BarBtn_CourseCatalogEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            FrmCourseCatalogEdit frm = new FrmCourseCatalogEdit();
-            frm.ShowDialog();
-        }
+       
 
-        private void barBtn_CourseEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UC_CourseEdit content = new UC_CourseEdit();
-            tabHelper.AddorShowTabPage(barBtn_CourseEdit.Caption, content);
-            GParam.Create().Mediator.AddActor(typeof(UC_CourseEdit).Name, content);
-        }
-
-        private void BarBtn_CourseSign_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UC_CourseSignEdit content = new UC_CourseSignEdit();
-            tabHelper.AddorShowTabPage(BarBtn_CourseSign.Caption, content);
-            GParam.Create().Mediator.AddActor(typeof(UC_CourseSignEdit).Name, content);
-        }
-
-        private void BarBtn_CourseScan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UC_CourseScan content = new UC_CourseScan();
-            tabHelper.AddorShowTabPage(BarBtn_CourseScan.Caption, content);
-            GParam.Create().Mediator.AddActor(typeof(UC_CourseScan).Name, content);
-        }
+        
 
         private void BarBtn_BussinisTravel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -242,8 +218,13 @@ namespace Sign.Module_System.View.Form
 
         private void barBtn_TechniqueCatalogEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            UC_TechniqueCatalogEdit content = new UC_TechniqueCatalogEdit();
-            tabHelper.AddorShowTabPage(barBtn_TechniqueCatalogEdit.Caption, content);
+            
+        }
+
+        private void barBtn_UC_ExportBusinesStripExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UC_ExportBusinesStripExcel content = new UC_ExportBusinesStripExcel();
+            tabHelper.AddorShowTabPage(barBtn_UC_ExportBusinesStripExcel.Caption, content);
             GParam.Create().Mediator.AddActor(content.GetType().Name, content);
         }
     }
